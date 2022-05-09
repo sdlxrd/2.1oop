@@ -11,7 +11,7 @@ Pay::Pay()
     first = 15;
     second = 3;
 }
-Pay::Pay(double f = 15, int unsigned s = 3)
+Pay::Pay(double f = 15,int unsigned s = 3)
 {
     first = f;
     second = s;
@@ -52,17 +52,6 @@ void Pay::Display(Pay f) const
     cout << string(f) << endl;
 }
 
-Pay Pay::Read(Pay f)
-{
-    int x, y;
-    cout << "first =  ";
-    cin >> x;
-
-        cout << "second = ";
-        cin >> y;
- f.Init(x, y);
- return f;
-}
 
 Pay& Pay::operator = (const Pay& f)
 {
@@ -97,18 +86,21 @@ istream& operator >> (istream& in, Pay& f)
 Pay& Pay::operator ++()
 {
     first++;
+    second++;
     return *this;
 }
 
 Pay& Pay::operator --()
 {
     first--;
+    second--;
     return *this;
 }
 
 Pay Pay::operator ++(int)
 {
     Pay t(*this);
+    first++;
     second++;
     return t;
 }
@@ -116,6 +108,7 @@ Pay Pay::operator ++(int)
 Pay Pay::operator --(int)
 {
     Pay t(*this);
+    first--;
     second--;
     return t;
 }

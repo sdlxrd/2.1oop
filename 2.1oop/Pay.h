@@ -24,8 +24,7 @@ public:
 
     bool Init(int x, int y);
     void Display(Pay f) const;
-    Pay Read(Pay);
-
+  
     int summa();
 
     Pay& operator = (const Pay&);
