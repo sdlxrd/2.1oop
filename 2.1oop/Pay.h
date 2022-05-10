@@ -33,6 +33,6 @@ public:
     Pay operator ++(int);
     Pay operator --(int);
 
-    int summa(int n);
+    double summa(int n);
 
 };

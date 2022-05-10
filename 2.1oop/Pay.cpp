@@ -78,7 +78,7 @@ Pay Pay::operator --(int)
     second--;
     return t;
 }
-int Pay::summa(int n)
+double Pay::summa(int n)
 {
     return first / second * n;
 };
