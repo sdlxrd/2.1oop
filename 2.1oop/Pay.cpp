@@ -8,13 +8,13 @@ using namespace std;
 
 Pay::Pay()
 {
-    first = 15;
-    second = 3;
+    first = 0;
+    second = 0;
 }
-Pay::Pay(double f = 15,int unsigned s = 3)
+Pay::Pay(double f = 0,int unsigned s = 0)
 {
-    first = f;
-    second = s;
+    this->first = f;
+    this->second = s;
 }
 Pay::Pay(const Pay& f)
 {
@@ -23,35 +23,6 @@ Pay::Pay(const Pay& f)
 }
 Pay::~Pay()
 {}
-
-void Pay::setfirst(double value)
-{
-    first = value;
-}
-
-void Pay::setsecond(unsigned int value)
-{
-    second = value;
-}
-
-bool Pay::Init(int x, int y)
-{
-    if (x >= 0 && y >= 0)
-    {
-        first = x;
-        second = y;
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-void Pay::Display(Pay f) const
-{
-    cout << string(f) << endl;
-}
-
 
 Pay& Pay::operator = (const Pay& f)
 {
@@ -77,30 +48,26 @@ ostream& operator << (ostream& out, const Pay& f)
 
 istream& operator >> (istream& in, Pay& f)
 {
-    cout << " First = "; in >> f.first;
+    cout << "First = "; in >> f.first;
     cout << "Second = "; in >> f.second;
-    cout << endl;
     return in;
 }
 
 Pay& Pay::operator ++()
 {
     first++;
-    second++;
     return *this;
 }
 
 Pay& Pay::operator --()
 {
     first--;
-    second--;
     return *this;
 }
 
 Pay Pay::operator ++(int)
 {
     Pay t(*this);
-    first++;
     second++;
     return t;
 }
@@ -108,15 +75,10 @@ Pay Pay::operator ++(int)
 Pay Pay::operator --(int)
 {
     Pay t(*this);
-    first--;
     second--;
     return t;
 }
-int Pay::summa()
+int Pay::summa(int n)
 {
-    int n;
-    cout << "n = ";cin >> n;
-    double summa = first / second * n;
-    cout << endl << "result = " << summa << endl;
-    return summa;
+    return first / second * n;
 };

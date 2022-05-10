@@ -18,14 +18,9 @@ public:
     ~Pay();
 
     double getfirst() const { return first; };
-    int unsigned getsecond() const { return second; };
-    void setfirst(double value);
-    void setsecond(unsigned int value);
-
-    bool Init(int x, int y);
-    void Display(Pay f) const;
-  
-    int summa();
+    int unsigned getsecond() const { return second; }
+    void setfirst(double first) { this->first = first; }
+    void setsecond(unsigned int second) { this->second = second; }
 
     Pay& operator = (const Pay&);
     operator string() const;
@@ -37,5 +32,7 @@ public:
     Pay& operator --();
     Pay operator ++(int);
     Pay operator --(int);
+
+    int summa(int n);
 
 };
